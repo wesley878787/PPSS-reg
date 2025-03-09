@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration - Promasters 2025</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#0052CC',
+secondary: '#FF6B2C'
+},
+borderRadius: {
+'none': '0px',
+'sm': '4px',
+DEFAULT: '8px',
+'md': '12px',
+'lg': '16px',
+'xl': '20px',
+'2xl': '24px',
+'3xl': '32px',
+'full': '9999px',
+'button': '8px'
+}
+}
+}
+}
+</script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body { font-family: 'Inter', sans-serif; }
+.step-content {
+display: none;
+}
+.step-content.active {
+display: block;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+</style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+<nav class="bg-white shadow-sm">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between h-16">
+<div class="flex items-center">
+<a href="https://readdy.ai/home/e0313b02-e324-4884-8169-a25819dc9960/7f94ea32-0512-4e82-b285-8c8ea5c80cce" data-readdy="true" class="flex items-center">
+<span class="font-['Pacifico'] text-2xl text-primary">logo</span>
+</a>
+</div>
+<div class="flex items-center">
+<a href="https://readdy.ai/home/e0313b02-e324-4884-8169-a25819dc9960/7f94ea32-0512-4e82-b285-8c8ea5c80cce" data-readdy="true" class="text-gray-600 hover:text-primary flex items-center gap-1">
+<i class="ri-arrow-left-line"></i>
+<span>Back to Home</span>
+</a>
+</div>
+</div>
+</div>
+</nav>
+<main class="max-w-3xl mx-auto px-4 py-12">
+<div class="bg-white shadow rounded-lg p-8">
+<div class="mb-8">
+<div class="flex justify-between items-center mb-4">
+<div class="flex items-center gap-2">
+<span id="currentStep" class="text-lg font-semibold text-primary">Step 1</span>
+<span class="text-gray-400">/</span>
+<span class="text-gray-400">4 Steps</span>
+</div>
+<div class="text-sm text-gray-500" id="progressText">25% Complete</div>
+</div>
+<div class="h-2 bg-gray-200 rounded-full">
+<div id="progressBar" class="h-2 bg-primary rounded-full transition-all duration-300" style="width: 25%"></div>
+</div>
+</div>
+<div id="step1" class="step-content active">
+<h2 class="text-2xl font-bold mb-6">Personal Information</h2>
+<div class="space-y-6">
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+<input type="text" class="w-full px-4 py-2 border rounded-button focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none" required>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+<input type="text" class="w-full px-4 py-2 border rounded-button focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none" required>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+<input type="email" class="w-full px-4 py-2 border rounded-button focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none" required>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1">Education Level</label>
+<div class="relative">
+<button type="button" class="w-full px-4 py-2 border rounded-button focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none text-left bg-white flex justify-between items-center" onclick="toggleDropdown('educationDropdown')">
+<span id="selectedEducation">Select Education Level</span>
+<i class="ri-arrow-down-s-line"></i>
+</button>
+<div id="educationDropdown" class="hidden absolute z-10 w-full mt-1 bg-white border rounded-lg shadow-lg">
+<div class="py-1">
+<a href="#" class="block px-4 py-2 hover:bg-gray-100" onclick="selectEducation(this)">Bachelor's Degree</a>
+<a href="#" class="block px-4 py-2 hover:bg-gray-100" onclick="selectEducation(this)">Master's Degree</a>
+<a href="#" class="block px-4 py-2 hover:bg-gray-100" onclick="selectEducation(this)">Doctorate</a>
+<a href="#" class="block px-4 py-2 hover:bg-gray-100" onclick="selectEducation(this)">Post-Doctorate</a>
+</div>
+</div>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1">University/Institution</label>
+<input type="text" class="w-full px-4 py-2 border rounded-button focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none" required>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1">Field of Study</label>
+<input type="text" class="w-full px-4 py-2 border rounded-button focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none" required>
+</div>
+</div>
+</div>
+<div id="step2" class="step-content">
+<h2 class="text-2xl font-bold mb-6">Professional Goals</h2>
+<div class="space-y-6">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-3">Career Objectives</label>
+<div class="space-y-2">
+<label class="flex items-center gap-2 cursor-pointer">
+<input type="checkbox" class="w-4 h-4 text-primary rounded border-gray-300 focus:ring-primary">
+<span>Career Advancement</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input type="checkbox" class="w-4 h-4 text-primary rounded border-gray-300 focus:ring-primary">
+<span>Start a Business</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input type="checkbox" class="w-4 h-4 text-primary rounded border-gray-300 focus:ring-primary">
+<span>Research & Development</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input type="checkbox" class="w-4 h-4 text-primary rounded border-gray-300 focus:ring-primary">
+<span>Industry Leadership</span>
+</label>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1">Industry Sector</label>
+<div class="relative">
+<button type="button" class="w-full px-4 py-2 border rounded-button focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none text-left bg-white flex justify-between items-center" onclick="toggleDropdown('industryDropdown')">
+<span id="selectedIndustry">Select Industry</span>
+<i class="ri-arrow-down-s-line"></i>
+</button>
+<div id="industryDropdown" class="hidden absolute z-10 w-full mt-1 bg-white border rounded-lg shadow-lg">
+<div class="py-1">
+<a href="#" class="block px-4 py-2 hover:bg-gray-100" onclick="selectIndustry(this)">Technology</a>
+<a href="#" class="block px-4 py-2 hover:bg-gray-100" onclick="selectIndustry(this)">Healthcare</a>
+<a href="#" class="block px-4 py-2 hover:bg-gray-100" onclick="selectIndustry(this)">Finance</a>
+<a href="#" class="block px-4 py-2 hover:bg-gray-100" onclick="selectIndustry(this)">Education</a>
+</div>
+</div>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1">Years of Experience</label>
+<input type="number" min="0" max="50" class="w-full px-4 py-2 border rounded-button focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none" required>
+</div>
+</div>
+</div>
+<div id="step3" class="step-content">
+<h2 class="text-2xl font-bold mb-6">Entrepreneurial Interests</h2>
+<div class="space-y-6">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1">Business Sector</label>
+<div class="grid grid-cols-2 gap-4">
+<label class="flex items-center gap-2 p-4 border rounded-lg cursor-pointer hover:border-primary transition-colors">
+<input type="radio" name="sector" class="text-primary focus:ring-primary">
+<span>B2B Services</span>
+</label>
+<label class="flex items-center gap-2 p-4 border rounded-lg cursor-pointer hover:border-primary transition-colors">
+<input type="radio" name="sector" class="text-primary focus:ring-primary">
+<span>B2C Products</span>
+</label>
+<label class="flex items-center gap-2 p-4 border rounded-lg cursor-pointer hover:border-primary transition-colors">
+<input type="radio" name="sector" class="text-primary focus:ring-primary">
+<span>Tech Startup</span>
+</label>
+<label class="flex items-center gap-2 p-4 border rounded-lg cursor-pointer hover:border-primary transition-colors">
+<input type="radio" name="sector" class="text-primary focus:ring-primary">
+<span>Social Enterprise</span>
+</label>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1">Startup Experience</label>
+<select class="w-full px-4 py-2 border rounded-button focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none">
+<option value="">Select Experience Level</option>
+<option value="none">No Experience</option>
+<option value="beginner">Beginner</option>
+<option value="intermediate">Intermediate</option>
+<option value="advanced">Advanced</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-3">Resource Needs</label>
+<div class="space-y-2">
+<label class="flex items-center gap-2 cursor-pointer">
+<input type="checkbox" class="w-4 h-4 text-primary rounded border-gray-300 focus:ring-primary">
+<span>Funding & Investment</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input type="checkbox" class="w-4 h-4 text-primary rounded border-gray-300 focus:ring-primary">
+<span>Mentorship</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input type="checkbox" class="w-4 h-4 text-primary rounded border-gray-300 focus:ring-primary">
+<span>Network Access</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input type="checkbox" class="w-4 h-4 text-primary rounded border-gray-300 focus:ring-primary">
+<span>Technical Support</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+<div id="step4" class="step-content">
+<h2 class="text-2xl font-bold mb-6">Mentorship Preferences</h2>
+<div class="space-y-6">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-3">Preferred Mentorship Areas</label>
+<div class="space-y-2">
+<label class="flex items-center gap-2 cursor-pointer">
+<input type="checkbox" class="w-4 h-4 text-primary rounded border-gray-300 focus:ring-primary">
+<span>Business Strategy</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input type="checkbox" class="w-4 h-4 text-primary rounded border-gray-300 focus:ring-primary">
+<span>Technical Skills</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input type="checkbox" class="w-4 h-4 text-primary rounded border-gray-300 focus:ring-primary">
+<span>Leadership Development</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input type="checkbox" class="w-4 h-4 text-primary rounded border-gray-300 focus:ring-primary">
+<span>Industry Insights</span>
+</label>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1">Availability</label>
+<select class="w-full px-4 py-2 border rounded-button focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none">
+<option value="">Select Availability</option>
+<option value="weekdays">Weekdays</option>
+<option value="weekends">Weekends</option>
+<option value="evenings">Evenings</option>
+<option value="flexible">Flexible</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1">Communication Preference</label>
+<select class="w-full px-4 py-2 border rounded-button focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none">
+<option value="">Select Preference</option>
+<option value="video">Video Calls</option>
+<option value="phone">Phone Calls</option>
+<option value="email">Email</option>
+<option value="mixed">Mixed Format</option>
+</select>
+</div>
+</div>
+</div>
+<div class="mt-8 flex justify-between">
+<button type="button" id="prevBtn" onclick="prevStep()" class="px-6 py-2 border border-gray-300 rounded-button text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary/20 hidden">Previous</button>
+<button type="button" id="nextBtn" onclick="nextStep()" class="px-6 py-2 bg-primary text-white rounded-button hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary/20">Next</button>
+</div>
+</div>
+<div id="successModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+<div class="bg-white rounded-lg p-8 max-w-md w-full mx-4">
+<div class="text-center">
+<div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+<i class="ri-check-line text-3xl text-green-500"></i>
+</div>
+<h3 class="text-xl font-semibold mb-2">Registration Complete!</h3>
+<p class="text-gray-600 mb-6">Thank you for registering with Promasters. We'll review your application and get back to you soon.</p>
+<button onclick="handleReturn()" class="w-full px-6 py-2 bg-primary text-white rounded-button hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary/20 flex items-center justify-center gap-2">
+  <span id="returnBtnText">Return to Homepage</span>
+  <i id="returnBtnSpinner" class="ri-loader-4-line animate-spin hidden"></i>
+</button>
+</div>
+</div>
+</div>
+</main>
+<script>
+let currentStep = 1;
+const totalSteps = 4;
+function updateProgress() {
+const progress = (currentStep / totalSteps) * 100;
+document.getElementById('progressBar').style.width = `${progress}%`;
+document.getElementById('progressText').textContent = `${progress}% Complete`;
+document.getElementById('currentStep').textContent = `Step ${currentStep}`;
+}
+function showStep(step) {
+document.querySelectorAll('.step-content').forEach(el => el.classList.remove('active'));
+document.getElementById(`step${step}`).classList.add('active');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+prevBtn.style.display = step === 1 ? 'none' : 'block';
+nextBtn.textContent = step === totalSteps ? 'Submit' : 'Next';
+}
+function nextStep() {
+if (currentStep < totalSteps) {
+currentStep++;
+showStep(currentStep);
+updateProgress();
+} else {
+document.getElementById('successModal').classList.remove('hidden');
+}
+}
+function prevStep() {
+if (currentStep > 1) {
+currentStep--;
+showStep(currentStep);
+updateProgress();
+}
+}
+function toggleDropdown(id) {
+const dropdown = document.getElementById(id);
+const allDropdowns = document.querySelectorAll('[id$="Dropdown"]');
+allDropdowns.forEach(d => {
+if (d.id !== id) d.classList.add('hidden');
+});
+dropdown.classList.toggle('hidden');
+}
+function selectEducation(element) {
+document.getElementById('selectedEducation').textContent = element.textContent;
+document.getElementById('educationDropdown').classList.add('hidden');
+}
+function selectIndustry(element) {
+document.getElementById('selectedIndustry').textContent = element.textContent;
+document.getElementById('industryDropdown').classList.add('hidden');
+}
+
+function handleReturn() {
+  const returnBtn = document.getElementById('returnBtnText');
+  const spinner = document.getElementById('returnBtnSpinner');
+  
+  returnBtn.textContent = 'Redirecting...';
+  spinner.classList.remove('hidden');
+  
+  // Clear form data from localStorage if any
+  localStorage.removeItem('formData');
+  
+  // Clear all form inputs
+  document.querySelectorAll('input').forEach(input => {
+    if (input.type === 'checkbox' || input.type === 'radio') {
+      input.checked = false;
+    } else {
+      input.value = '';
+    }
+  });
+  
+  document.querySelectorAll('select').forEach(select => {
+    select.selectedIndex = 0;
+  });
+  
+  // Reset custom dropdowns
+  document.getElementById('selectedEducation').textContent = 'Select Education Level';
+  document.getElementById('selectedIndustry').textContent = 'Select Industry';
+  
+  // Redirect after a brief delay
+  setTimeout(() => {
+    window.location.href = 'https://readdy.ai/home/e0313b02-e324-4884-8169-a25819dc9960/7f94ea32-0512-4e82-b285-8c8ea5c80cce';
+  }, 800);
+}
+
+document.addEventListener('click', function(e) {
+if (!e.target.closest('[id$="Dropdown"]') && !e.target.closest('button')) {
+document.querySelectorAll('[id$="Dropdown"]').forEach(d => d.classList.add('hidden'));
+}
+});
+</script>
+</body>
+</html>
